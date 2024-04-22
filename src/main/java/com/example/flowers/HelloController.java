@@ -17,51 +17,37 @@ public class HelloController {
     @FXML
     ImageView Fialka;
 
-    public void masha() {
-        double right = 400;
-        double center = 250;
-        double left = 10;
-        if (Fialka.getLayoutX() == right) {
-            Fialka.setLayoutX(center);
-            if (Krokus.getLayoutX() == center){Krokus.setLayoutX(right);}
-            if (Geran.getLayoutX() == center){Krokus.setLayoutX(right);}
+    ImageView[] massiv;
 
-                    } else if (Krokus.getLayoutX() == right) {
-            Fialka.setLayoutX(center);
-        } else Geran.setLayoutX(center);
+    int count=0;
+
+    public void initialize(){
+        massiv =new ImageView[] {Geran, Krokus, Fialka};
+    }
+
+    public void masha() {
+        ImageView temp = massiv[2];
+        massiv[2] = massiv[1];
+        massiv[1] = temp;
+        double xtemp = massiv[2].getLayoutX();
+        massiv[2].setLayoutX(massiv[1].getLayoutX());
+        massiv[1].setLayoutX(xtemp);
     }
 
 
-        public void tanya() {
-        double right = Fialka.getLayoutX();
-        double center = Krokus.getLayoutX();
-        double left = Geran.getLayoutX();
-        if (Fialka.getLayoutX() == left) {
-            Fialka.setLayoutX(center);
-            if (Krokus.getLayoutX() == center) {
-                Krokus.setLayoutX(left);
-            } else {
-                Geran.setLayoutX(left);
-            }
-        } else if (Krokus.getLayoutX() == left) {
-            Krokus.setLayoutX(center);
-            if (Fialka.getLayoutX() == center) {
-                Fialka.setLayoutX(left);
-            } else {
-                Geran.setLayoutX(left);
-            }
-        } else if (Geran.getLayoutX() == left) {
-            Geran.setLayoutX(center);
-            if (Krokus.getLayoutX() == center) {
-                Krokus.setLayoutX(left);
-            } else {
-                Fialka.setLayoutX(left);
-            }
-        }
+    public void tanya() {
+        ImageView temp = massiv[0];
+        massiv[0] = massiv[1];
+        massiv[1] = temp;
+        double xtemp = massiv[0].getLayoutX();
+        massiv[0].setLayoutX(massiv[1].getLayoutX());
+        massiv[1].setLayoutX(xtemp);
     }
 
     public void dayPassed() {
         masha();
         tanya();
+        count++;
+        counter.setText(String.valueOf(count));
     }
 }

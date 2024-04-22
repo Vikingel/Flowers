@@ -16,7 +16,7 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="17.0" layoutY="192.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <ImageView fx:id="Krokus" fitHeight="150.0" fitWidth="200.0" layoutX="250.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Krokus" fitHeight="150.0" fitWidth="200.0" layoutX="248.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Krokus.png" />
          </image>
